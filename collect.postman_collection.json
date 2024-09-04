@@ -50,7 +50,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/community-centers/66d8907ae7f8d064be7bf03c/occupancy?occupancy=95",
+					"raw": "http://localhost:8080/api/community-centers/66d893b4461ca962a148bc8f/occupancy?occupancy=95",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -59,7 +59,7 @@
 					"path": [
 						"api",
 						"community-centers",
-						"66d8907ae7f8d064be7bf03c",
+						"66d893b4461ca962a148bc8f",
 						"occupancy"
 					],
 					"query": [
@@ -74,17 +74,70 @@
 		},
 		{
 			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromCenterId\": \"64f2e7c2f776d6298763c99d\",\r\n    \"toCenterId\": \"64f2e7c2f776d6298763c99e\",\r\n    \"resourcesSent\": [\r\n        {\r\n            \"type\": \"Voluntário\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"type\": \"Veículo de transporte\",\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"resourcesReceived\": [\r\n        {\r\n            \"type\": \"Médico\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"type\": \"Kit de suprimentos médicos\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/community-centers/high-occupancy?threshold=90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community-centers",
+						"high-occupancy"
+					],
+					"query": [
+						{
+							"key": "threshold",
+							"value": "90"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "New Request",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromCenterId\": \"66d893b4461ca962a148bc8f\",\r\n    \"toCenterId\": \"66d895175e2feb4e4e772231\",\r\n    \"resourcesSent\": [\r\n        {\r\n            \"name\": \"Voluntário\",\r\n            \"points\": 6\r\n        },\r\n        {\r\n            \"name\": \"Veículo de transporte\",\r\n            \"points\": 5\r\n        }\r\n    ],\r\n    \"resourcesReceived\": [\r\n        {\r\n            \"name\": \"Médico\",\r\n            \"points\": 4\r\n        },\r\n        {\r\n            \"name\": \"Kit de suprimentos médicos\",\r\n            \"points\": 7\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/community-centers/exchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community-centers",
+						"exchange"
+					]
+				}
 			},
 			"response": []
 		}
