@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "00afb6da-dcad-4e31-8a50-617496c7aad5",
+		"name": "collect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27936903"
+	},
+	"item": [
+		{
+			"name": "Adicionar centro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Centro Comunitário A\",\r\n    \"address\": \"Rua A, 123\",\r\n    \"location\": \"Cidade A\",\r\n    \"maxCapacity\": 100,\r\n    \"currentOccupancy\": 50,\r\n    \"resources\": [\r\n        {\r\n            \"name\": \"Médico\",\r\n            \"points\": 2\r\n        },\r\n        {\r\n            \"name\": \"Voluntário\",\r\n            \"points\": 5\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/community-centers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community-centers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/community-centers/66d8907ae7f8d064be7bf03c/occupancy?occupancy=95",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community-centers",
+						"66d8907ae7f8d064be7bf03c",
+						"occupancy"
+					],
+					"query": [
+						{
+							"key": "occupancy",
+							"value": "95"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
