@@ -1,0 +1,82 @@
+
+Rota para criar
+
+http://localhost:8080/api/community-centers
+
+JSONS USADOS
+
+{
+    "name": "Centro Comunitário B",
+    "address": "Avenida dos Trabalhadores, 456",
+    "location": "Cidade B",
+    "maxCapacity": 150,
+    "currentOccupancy": 60,
+    "resources": [
+        {
+            "name": "Veículo de transporte",
+            "points": 5
+        },
+        {
+            "name": "Cesta básica",
+            "points": 2
+        },
+        {
+            "name": "Voluntário",
+            "points": 3
+        }
+    ]
+}
+
+{
+    "name": "Centro Comunitário A",
+    "address": "Rua A, 123",
+    "location": "Cidade A",
+    "maxCapacity": 100,
+    "currentOccupancy": 50,
+    "resources": [
+        {
+            "name": "Médico",
+            "points": 2
+        },
+        {
+            "name": "Voluntário",
+            "points": 5
+        }
+    ]
+}
+
+
+Rota atualizar percentual de ocupação
+http://localhost:8080/api/community-centers/66d893b4461ca962a148bc8f/occupancy?occupancy=95
+
+Rota usado para buscar a partir do limite
+http://localhost:8080/api/community-centers/high-occupancy?threshold=90
+
+Rota para fazer o intercambio entre centros
+
+http://localhost:8080/api/community-centers/exchange
+
+{
+    "fromCenterId": "66d893b4461ca962a148bc8f" //id centro 1,
+    "toCenterId": "66d895175e2feb4e4e772231" //id centro 2,
+    "resourcesSent": [
+        {
+            "name": "Voluntário",
+            "points": 6
+        },
+        {
+            "name": "Veículo de transporte",
+            "points": 5
+        }
+    ],
+    "resourcesReceived": [
+        {
+            "name": "Médico",
+            "points": 4
+        },
+        {
+            "name": "Kit de suprimentos médicos",
+            "points": 7
+        }
+    ]
+}
